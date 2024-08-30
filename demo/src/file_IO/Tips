@@ -1,0 +1,9 @@
+---------------------------***********BufferedReader Vs. Scanner*****************--------------------------------------
+
+1. BufferedReader is synchronous                       Scanner is not synchronous
+2. BufferedReader should be used with                  Scanner should avoided to use in Multiple threaded application
+   Mutltiple threaded application
+3. BufferedReader is fatser as it                      Scanner is little slower, As scanner does parsing of input data.
+   Simply read seq. of chracter
+
+Make sure to close try with resources while using BuffredReader and Scanner

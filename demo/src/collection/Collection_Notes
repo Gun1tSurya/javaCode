@@ -1,0 +1,37 @@
+Hierarchy of Collection Framework :-
+                                                 iterator()
+                                      Iterable<E> -------------> Iterator<E>
+                                         |
+                                     Collection                Map<K,V>
+                                 /     /    \                   |
+                                /      /      \                 |
+  Interfaces     ----->     Set    List    Queue<E>         SortedMap<K,V>
+                             /                |                 |
+                            /               Deque<E>         NavigableMap<K,V>
+                         SortedSet
+                            |
+                       NavigableSet<E>
+
+Implementation          HashSet           ArrayList      PriorityQueue            HashMap
+Classes                 LinkedHashSet     LinkedList     ArrayDeque               LinkedHashMap
+                        TreeSet           Stack          LinkedList(Deque)        HashTable
+                                          Vector                                  TreeMap
+
+
+
+When should I use an Iterator instead of for-each?
+Use an iterator when you want to remove elements from the collection. Iterators are good for filtering data and iterating over multiple collections in parallel.
+This is because for-each doesn't support the removal of elements as it hides the iterator used to implement its functionality.
+
+List Interface in Detail:-
+
+1. Can contains duplicates and elements are ordered. Example implementation are LinkedList(Linked list based) and ArrayList(Dynamic array based).
+
+
+
+
+
+ListIterator:- (Supported methods like hasNext(), next(), hasPrevious(), previous(), subList())
+1. Traverse list in either direction
+2. Modify list during iteration
+3. Obtain current position of iterator

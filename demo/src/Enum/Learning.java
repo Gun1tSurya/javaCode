@@ -1,0 +1,5 @@
+package Enum;
+
+public enum Learning {
+    COREJAVA,MULTITRADING,COLLECTION,JSPSPRINGHIBERNATE,SPRINGBOOT
+}

@@ -1,0 +1,40 @@
+Stream Operations:-
+
+System.out: Output stream
+System.in: Input stream
+System.err: error stream
+
+
+Intermediate Operations
+
+filter()
+map()
+flatMap()
+distinct()
+sorted()
+peek()
+limit()
+skip()
+
+Terminal Operations
+
+forEach()
+forEachOrdered()
+toArray()
+reduce()
+collect()
+min()
+max()
+count()
+anyMatch()
+allMatch()
+noneMatch()
+findFirst()
+findAny()
+
+Flatmap:- map() is used for transformation only but flatmap is used for both transformation and flattening.
+flatMap = map+ Flattening;
+
+Can we reuse stream? No.
+@we cannot reuse the streams or traverse the streams multiple times. Any attempt to do so will result in error :
+Stream has already been operated on or closed.

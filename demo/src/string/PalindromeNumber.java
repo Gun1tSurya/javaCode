@@ -18,5 +18,22 @@ public class PalindromeNumber {
         else{
             System.out.println("No is not palindrome");
         }
+        System.out.println(isPalindrome(no));
+
+    }
+
+    private static boolean isPalindrome(int no) {
+        String str = String.valueOf(no);
+        int i = 0;
+        int j = str.length() - 1;
+
+        while(j > i){
+            if(str.charAt(i) != str.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+
     }
 }

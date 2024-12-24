@@ -1,6 +1,5 @@
 package collection.set;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
 
 import java.util.HashSet;
 import java.util.Set;

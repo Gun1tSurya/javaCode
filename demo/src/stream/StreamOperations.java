@@ -1,11 +1,11 @@
-package Stream;
+package stream;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -133,19 +133,6 @@ public class StreamOperations {
         String minString = Stream.of("han","G","T","A","B").min(Comparator.comparing(String::valueOf)).get();
         System.out.println("Max number: " +  maxString + " Min Number: " + minString);
 
-        System.out.println("Reading txt file");
-        //method to read line by line
-        try {
-            Stream<String> lines = Files.lines(Paths.get("C:\\Users\\gunwants\\Desktop","demo.txt"));
-            Optional<String> hasPassword =  lines.onClose(()->System.out.println("File Close"))
-                    .filter(s->s.contains("password")).findFirst();
-            if(hasPassword.isPresent()){
-                System.out.println(hasPassword.get());
-            }
-            lines.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         //if else logic using stream
         System.out.println("######################If else login using stream######################");
@@ -164,5 +151,36 @@ public class StreamOperations {
         long count = tokens.stream().count();
         System.out.println(count);
 
+        // finding unique no from array
+        List<Integer> numbersWithDuplicates = Arrays.asList(1, 2, 3, 2, 4, 1, 5, 6, 5);
+        List<Integer> uniqueNo = numbersWithDuplicates.stream().distinct().collect(Collectors.toList());
+        System.out.println("unique no: "+ uniqueNo);
+
+        //find duplicates no
+        Set<Integer> set = new HashSet<>();
+        numbersWithDuplicates.stream().filter(n -> !set.add(n)).forEach(System.out::println);
+
+        // finding 3rd smallest no from array
+        int[] array = {4, 2, 7, 1, 5, 3, 6};
+        int k = 3;
+        int kthSmall = Arrays.stream(array).sorted().skip(k-1).findFirst().orElse(-1);
+        System.out.println("Kth smallest: "+ kthSmall);
+
+        // find the frequency of each word using Java streams:
+        List<String> words = Arrays.asList("apple", "banana", "apple", "cherry",
+                "banana", "apple");
+        Map<String, Long> wordFrequency = words.stream()
+                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+
+        //find out all the numbers starting with 1
+        List<Integer> myList = Arrays.asList(10,15,8,49,25,98,32);
+        myList.stream().map(s->s + "").filter(s->s.startsWith("1")).forEach(System.out::println);
+
+        // parallel stream
+        List<String> streamOps = Arrays.asList("A","B","C","D","E");
+
+        streamOps.stream().forEach(System.out::println);
+
+        streamOps.parallelStream().forEach(System.out::println);
     }
 }

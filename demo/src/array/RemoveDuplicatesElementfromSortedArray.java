@@ -1,5 +1,7 @@
 package array;
 
+import java.util.HashMap;
+
 public class RemoveDuplicatesElementfromSortedArray {
 
     public static void main(String[] args) {
@@ -21,6 +23,18 @@ public class RemoveDuplicatesElementfromSortedArray {
         System.out.println("\nAfter removing duplicates");
         for(int i=0;i<temp.length;i++){
              System.out.print(temp[i]+" ");
+        }
+
+        removeDuplicatesUsingMap(a);
+    }
+
+    private static void removeDuplicatesUsingMap(int[] a) {
+        HashMap<Integer,Boolean> map = new HashMap<>();
+
+        for(int i=0;i<a.length;i++){
+            if(map.get(a[i]) == null){
+                map.put(a[i],true);
+            }
         }
     }
 

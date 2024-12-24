@@ -4,7 +4,7 @@ public class ReverseStringByChar {
 
     public static void main(String[] args) {
 
-        String str = "Nimay";
+        String str = "race a ecar";
 
         int length = str.length();
         String rev = "";
@@ -13,5 +13,11 @@ public class ReverseStringByChar {
             rev += str.charAt(i);
         }
         System.out.println(rev);
+
+        if(str.equals(rev)){
+            System.out.print("Pass string is palindrome");
+        }else{
+            System.out.print("Pass string is NOT palindrome");
+        }
     }
 }

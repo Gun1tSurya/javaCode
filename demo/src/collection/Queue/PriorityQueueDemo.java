@@ -10,9 +10,9 @@ public class PriorityQueueDemo {
         for(int i=0;i<=10;i++){
             priorityQueue.offer(i);
         }
-        System.out.println(priorityQueue.peek());
+        System.out.println(priorityQueue.peek());// retrive head of queue without removing
         System.out.println(priorityQueue);
-        System.out.println(priorityQueue.poll());
+        System.out.println(priorityQueue.poll());//retrive head of queue with removing
         System.out.println(priorityQueue);
     }
 }

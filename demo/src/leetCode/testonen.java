@@ -1,29 +1,27 @@
 package leetCode;
 
 
+import java.util.*;
+
 public class testonen {
     public static void main(String[] args) {
-        char[] ch = {'h','e','l','l','o'};
-
-        char ans = reverseCharOperations(ch);
-        System.out.println(reverseCharOperations(ch));
+        char[] array = {'j', 'a', 'v', 'a'};
+        reversen(array);
+        System.out.println(array);
     }
 
-    private static char reverseCharOperations(char[] ch) {
-        int a_pointer = 0;
-        int b_pointer = ch.length-1;
-        char temp = 0;
-
-        while(a_pointer <= b_pointer){
-            temp = ch[a_pointer];
-            ch[a_pointer] = ch[b_pointer];
-            ch[b_pointer] = temp;
-
-            a_pointer += 1;
-            b_pointer -= 1;
+    private static void reversen(char[] array) {
+        int left = 0; int right = array.length-1;
+        while (left < right){
+            char temp  = array[left];
+            array[left] = array[right];
+            array[right] = temp;
+            left++;
+            right--;
         }
-        return temp;
+
     }
+
 
 
 }

@@ -2,24 +2,19 @@ package leetCode;
 
 public class reverseChar {
     public static void main(String[] args) {
-        char[] ch = {'h','e','l','l','o'};
-
-        char ans = reverseCharOperation(ch);
-        System.out.println(reverseCharOperation(ch));
+        char[] array = {'j', 'a', 'v', 'a'};
+        reverse(array);
+        System.out.println(array);
     }
 
-    private static char reverseCharOperation(char[] ch) {
-       int a_pointer = 0;
-       int b_pointer = ch.length-1;
-       char temp = 0;
-       while (a_pointer <= b_pointer){
-           temp = ch[a_pointer];
-           ch[a_pointer] = ch[b_pointer];
-           ch[b_pointer] = temp;
-           
-           a_pointer++;
-           b_pointer--;
-       }
-       return temp;
+    public static void reverse(char[] array) {
+        int left = 0, right = array.length - 1;
+        while (left < right) {
+            char temp = array[left];
+            array[left] = array[right];
+            array[right] = temp;
+            left++;
+            right--;
+        }
     }
 }
